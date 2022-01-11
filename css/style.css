@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.content {
+  margin: auto;
+  width: 80%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn {
+  width: 160px;
+  height: 32px;
+  background-color: #90ee90;
+  border: 1px solid #90ee90;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.input-text {
+  width: 160px;
+  height: 26px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px #888888;
+  padding: 30px 50px 30px 50px;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.insert-model h2 {
+  margin-bottom: 30px;
+}
+
+.flex-form {
+  gap: 20px;
+}
+
+#fetch {
+  display: none;
+}
+
+.table th,
+.table td {
+  width: 150px;
+  text-align: left;
+}
+
+.table tr {
+  height: 30px;
+}
+
+.btn-t {
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+#read {
+  background-color: #2e8b57;
+}
+
+#delete {
+  background-color: #800000;
+}
+
+#edit {
+  background-color: #b8860b;
+}
