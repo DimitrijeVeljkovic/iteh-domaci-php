@@ -8,7 +8,6 @@
 
 <table class="table">
     <?php
-        $i = 1;
         if (!empty($rows)) { 
     ?>
         <thead>
@@ -24,7 +23,7 @@
                 foreach ($rows as $row) { 
             ?>
                 <tr>
-                    <td><?php echo $i++; ?></td>
+                    <td><?php echo $row['id']; ?></td>
                     <td><?php echo $row['brand']; ?></td>
                     <td><?php echo $row['price']; ?></td>
                     <td><?php echo $row['model']; ?></td>
@@ -37,9 +36,7 @@
             <?php
                 }
             } else {
-                echo "
-                    <p style='text-align: center'> No data to show </p>
-                ";
+                echo "<p style='text-align: center'> No data to show </p>";
             }
             ?>
         </tbody>

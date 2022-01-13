@@ -32,7 +32,7 @@ h1 {
   flex-direction: column;
 }
 
-.btn {
+.bttn {
   width: 160px;
   height: 32px;
   background-color: #90ee90;
@@ -40,6 +40,11 @@ h1 {
   border-radius: 4px;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
+}
+
+.bttn:hover {
+  cursor: pointer;
+  border: 1px solid black;
 }
 
 .input-text {
@@ -50,6 +55,10 @@ h1 {
   background-color: transparent;
 }
 
+.input-text:focus {
+  outline: none;
+}
+
 .card {
   border-radius: 10px;
   box-shadow: 10px 10px 8px #888888;
@@ -58,7 +67,8 @@ h1 {
   margin-top: 20px;
 }
 
-.insert-model h2 {
+.insert-model h2,
+.insert-laptop h2 {
   margin-bottom: 30px;
 }
 
@@ -87,6 +97,10 @@ h1 {
   padding: 5px;
 }
 
+.btn-t:hover {
+  color: black;
+}
+
 #read {
   background-color: #2e8b57;
 }
@@ -97,4 +111,22 @@ h1 {
 
 #edit {
   background-color: #b8860b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+#result-laptop {
+  margin-top: 20px;
 }
