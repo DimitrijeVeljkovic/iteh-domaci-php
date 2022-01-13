@@ -79,6 +79,15 @@
             return $data;
         }
 
+        public function delete($id){
+            $query = "DELETE FROM laptops WHERE id = '$id' ";
+            if ($sql = $this->conn->exec($query)) {
+                echo "<p style='color: #228b22;'> Laptop <strong>[ID: $id]</strong> deleted successfully! </p>";
+            } else {
+                echo "<p style='color: #b22222;'> Cannot delete laptop! </p>";
+            }
+        }
+
     }
 
 ?>

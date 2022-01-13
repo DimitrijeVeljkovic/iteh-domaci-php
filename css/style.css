@@ -171,3 +171,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
 }
+
+#modal-delete p {
+  line-height: 34px;
+}

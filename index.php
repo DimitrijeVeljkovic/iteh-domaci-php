@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laptops</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link type="text/css" rel="stylesheet" href="css/style.css" >
 </head>
 <body>
@@ -59,6 +58,7 @@
             <div id="modal-content" class="modal-content">     
                 <span id="close" class="close">&times;</span>
                 <div id="modal-read"></div>
+                <div id="modal-delete"></div>
             </div>
         </div>
 
@@ -94,7 +94,6 @@
                     submit_model: submit_model
                 },
                 success: function(data) {
-                    fetch();
                     $("#result-model").html(data);
                 }
             });
@@ -141,6 +140,28 @@
                 }
             });
             $('#modal').css('display','block');
+        });
+
+        $(document).on('click', '#delete', function(e) {
+            e.preventDefault();
+            if (window.confirm('Do you want to delete item?')) {
+                var id = $(this).attr('value');
+                $.ajax({
+                    url: "delete.php",
+                    type: "post",
+                    data: {
+                        id:id
+                    },
+                    success: function(data) {
+                        fetch();
+                        $("#modal-delete").html(data);
+                    }
+                });
+                $('#modal').css('display','block');
+            }
+            else {
+                return false;
+            }
         });
     </script>
 </body>
