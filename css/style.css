@@ -20,6 +20,11 @@ h1 {
   margin-top: 20px;
 }
 
+select {
+  width: 160px;
+  height: 32px;
+}
+
 .content {
   margin: auto;
   width: 80%;
@@ -82,7 +87,7 @@ h1 {
 
 .table th,
 .table td {
-  width: 150px;
+  width: 100px;
   text-align: left;
 }
 
@@ -95,6 +100,7 @@ h1 {
   color: white;
   border-radius: 4px;
   padding: 5px;
+  text-align: center;
 }
 
 .btn-t:hover {
@@ -135,7 +141,7 @@ h1 {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 150px;
   left: 0;
   top: 0;
   width: 100%;
@@ -167,11 +173,21 @@ h1 {
   cursor: pointer;
 }
 
-#modal-read h2 {
+#modal-read h2,
+#modal-edit h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
 #modal-delete p {
   line-height: 34px;
+}
+
+#modal-edit {
+  width: 100%;
+}
+
+#update-text {
+  margin-top: 20px;
+  text-align: center;
 }

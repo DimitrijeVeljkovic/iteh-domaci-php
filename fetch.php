@@ -27,7 +27,7 @@
                     <td><?php echo $row['brand']; ?></td>
                     <td><?php echo $row['price']; ?></td>
                     <td><?php echo $row['model']; ?></td>
-                    <td>
+                    <td style="width: 200px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;">
                         <a href='#' id='read' class="btn-t" value='<?php echo $row['id'] ?>'>Read</a>
                         <a href='#' id='delete' class="btn-t" value='<?php echo $row['id'] ?>'>Delete</a>
                         <a href='#' id='edit' class="btn-t" value='<?php echo $row['id'] ?>'>Edit</a>

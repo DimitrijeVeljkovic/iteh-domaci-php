@@ -88,6 +88,25 @@
             }
         }
 
+        public function edit($id) {
+            $data = null;
+            $stmt = $this->conn->prepare("SELECT * FROM laptops WHERE id='$id'");
+            $stmt->execute();
+            $data = $stmt->fetch();
+            return $data;
+        }
+
+        public function update($data) {
+            $query = "UPDATE laptops SET brand = '$data[edit_brand]', price = '$data[edit_price]', model_id = '$data[edit_selected_model]'
+            WHERE id='$data[edit_id]'";
+      
+            if ($sql = $this->conn->exec($query)) {
+              echo "<p style='color: #228b22;'> Laptop updated successfully! </p>";
+            }else {
+              echo "<p style='color: #b22222;'> Cannot update laptop! </p>";
+            }
+        }
+
     }
 
 ?>
