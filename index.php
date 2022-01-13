@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laptops</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link type="text/css" rel="stylesheet" href="css/style.css" >
 </head>
 <body>
@@ -54,6 +55,13 @@
             </div>
         </div>
 
+        <div id="modal" class="modal">
+            <div id="modal-content" class="modal-content">     
+                <span id="close" class="close">&times;</span>
+                <div id="modal-read"></div>
+            </div>
+        </div>
+
         <div id="fetch" class="card"></div>
     </div>
 
@@ -69,7 +77,7 @@
                 url: 'fetch.php',
                 type: 'post',
                 success: function(data) {
-                $("#fetch").html(data)
+                    $("#fetch").html(data)
                 }
             });
         }
@@ -93,26 +101,47 @@
         });
 
         $(document).on("click", "#submit-laptop", function(e) {
-        e.preventDefault();
-        var brand = $("#brand").val();
-        var price = $("#price").val();
-        var selected_model = $("#selected-model").val();
-        var submit_laptop = $("#submit-laptop").val();
-        $.ajax({
-          url: "insert-laptop.php",
-          type: "post",
-          data: {
-            brand:brand,
-            price:price,
-            selected_model:selected_model,
-            submit_laptop:submit_laptop
-          },
-          success: function(data) {
-            fetch();
-            $("#result-laptop").html(data);
-          }
+            e.preventDefault();
+            var brand = $("#brand").val();
+            var price = $("#price").val();
+            var selected_model = $("#selected-model").val();
+            var submit_laptop = $("#submit-laptop").val();
+            $.ajax({
+                url: "insert-laptop.php",
+                type: "post",
+                data: {
+                    brand:brand,
+                    price:price,
+                    selected_model:selected_model,
+                    submit_laptop:submit_laptop
+                },
+                success: function(data) {
+                    fetch();
+                    $("#result-laptop").html(data);
+                }
+            });
         });
-      });
+
+        $(document).on('click', '#close', function(e){
+            e.preventDefault();
+            $('#modal').css('display','none');
+        });
+
+        $(document).on('click', '#read', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('value');
+            $.ajax({
+                url: 'read.php',
+                type: 'post',
+                data: {
+                    id:id
+                },
+                success: function(data) {
+                    $('#modal-read').html(data);
+                }
+            });
+            $('#modal').css('display','block');
+        });
     </script>
 </body>
 </html>

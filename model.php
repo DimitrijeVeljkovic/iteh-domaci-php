@@ -71,6 +71,14 @@
             return $data;
         }
 
+        public function read($id) {
+            $data = null;
+            $stmt = $this->conn->prepare("SELECT laptops.id, laptops.brand, laptops.price, laptop_models.model FROM laptops JOIN laptop_models on laptops.model_id = laptop_models.id WHERE laptops.id='$id'");
+            $stmt->execute();
+            $data = $stmt->fetch();
+            return $data;
+        }
+
     }
 
 ?>
